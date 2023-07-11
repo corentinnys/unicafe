@@ -4,32 +4,41 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [good, setGood] = useState(0)
+  const [neutre, setNeutre] = useState(0)
+  const [bad, setBad] = useState(0)
+
+   function handleClick(e){
+   if (e.currentTarget.getAttribute('name') == 'good')
+   {
+    setGood (good+1)
+    
+   }else if(e.currentTarget.getAttribute('name')=='neutre')
+   {
+    setNeutre(neutre+1)
+   }else{
+    setBad(bad+1)
+   }
+   
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <div>
+      <h1>Give feedback</h1>
+      <button name='good' onClick={(e) =>handleClick(e)} >Good</button>
+      <button name='neutre' onClick={(e) => handleClick(e)}>Neutre</button>
+      <button name='bad' onClick={(e) => handleClick(e)}>Bad</button>
+
+      <h2>Stats</h2>
+      <ul>
+        <li>good {good}</li>
+        <li>neutre {neutre}</li>
+        <li>neutre {bad}</li>
+      </ul>
+     </div>
     </>
   )
 }
-
+    
 export default App
