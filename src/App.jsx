@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,8 +7,10 @@ function App() {
   const [good, setGood] = useState(0)
   const [neutre, setNeutre] = useState(0)
   const [bad, setBad] = useState(0)
+  let ref = useRef(null)
 
    function handleClick(e){
+    
    if (e.currentTarget.getAttribute('name') == 'good')
    {
     setGood (good+1)
@@ -22,6 +24,8 @@ function App() {
    
   }
 
+  
+
   return (
     <>
      <div>
@@ -32,9 +36,9 @@ function App() {
 
       <h2>Stats</h2>
       <ul>
-        <li>good {good}</li>
-        <li>neutre {neutre}</li>
-        <li>neutre {bad}</li>
+        <li >good {good}</li>
+        <li  >neutre {neutre}</li>
+        <li >neutre {bad}</li>
       </ul>
      </div>
     </>
