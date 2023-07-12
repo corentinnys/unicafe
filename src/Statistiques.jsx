@@ -1,5 +1,6 @@
 
 import { useState ,useEffect} from 'react'
+import StatisticLine from './StatisticLine'
 function Statistiques(props)
 {
     const [all, setAll] = useState(0)
@@ -17,12 +18,11 @@ function Statistiques(props)
 
     return (
     <>
-        <li> good {props.good} </li>
-        <li>bad {props.bad}</li>
-        <li >neutre {props.neutre} </li>
-        <li>all {all}</li>
-          <li>positive {positive}</li>
-         
+        <StatisticLine text="good" value={props.good}/>
+        <StatisticLine text="bad" value={props.bad}/>
+        <StatisticLine text="neutre" value={props.neutre}/>
+        <StatisticLine text="all" value={all}/>
+        <StatisticLine text="positive" value={positive}/>
     </>
 )
  

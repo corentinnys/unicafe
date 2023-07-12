@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Statistiques from './Statistiques'
+import Btn from './Btn'
 
 function App() {
   const [good, setGood] = useState(0)
@@ -13,7 +14,7 @@ function App() {
   const [score_moyen,setScoreMoyen] =useState(0)*/
 
 
-   function handleClick(e){
+    function handleClick(e){
     
    
    if (e.currentTarget.getAttribute('name') == 'good')
@@ -33,9 +34,11 @@ function App() {
     <>
      <div>
       <h1>Give feedback</h1>
-      <button name='good' onClick={(e) =>handleClick(e)} >Good</button>
-      <button name='neutre' onClick={(e) => handleClick(e)}>Neutre</button>
-      <button name='bad' onClick={(e) => handleClick(e)}>Bad</button>
+      <Btn name={'good'} handleClick={handleClick}/>
+      <Btn name={'neutre'} handleClick={handleClick}/>
+      <Btn name={'bad'} handleClick={handleClick}/>
+    
+    
 
       <h2>Stats</h2>
       <ul>
